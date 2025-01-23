@@ -42,6 +42,9 @@ title = 'title anime'
 data = animeEn(title)
 print(data)
 #res
+```
+__Result__
+```json
 {'status': 'success', 'data': [{'title': 'Laid-Back Camp', 'thumb': 'https://animeheaven.me/image.php?nipss', 'url': 'https://animeheaven.me/anime.php?76jna'}, {'title': 'Laid-Back Camp 2nd Season', 'thumb': 'https://animeheaven.me/image.php?0i8hk', 'url': 'https://animeheaven.me/anime.php?0mwyq'}, {'title': 'Laid-Back Camp 3rd Season', 'thumb': 'https://animeheaven.me/image.php?141v8', 'url': 'https://animeheaven.me/anime.php?iguu3'}]}
 
 ```

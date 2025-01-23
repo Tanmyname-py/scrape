@@ -38,7 +38,7 @@ __install library pip__
 __example use code__
 ```python
 #Search anime
-title = 'title anime'
+title = 'yuru camp'
 data = animeEn(title)
 print(data)
 #res

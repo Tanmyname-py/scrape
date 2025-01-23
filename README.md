@@ -40,7 +40,7 @@ __example use code__
 **1. Search anime**
 ```python
 #Search anime
-title = 'yuru camp'
+title = 'Kubo-san wa Mob wo Yurusanai'
 data = animeEn(title)
 print(data)
 ```

@@ -40,6 +40,7 @@ __example use code__
 **1. Search anime**
 ```python
 #Search anime
+from anime_en import animeEn,get_detail,get_anime
 title = 'Kubo-san wa Mob wo Yurusanai'
 data = animeEn(title)
 print(data)
@@ -59,6 +60,7 @@ __Result__
 ```
 **2. Get detail anime**
 ```python
+from anime_en import animeEn,get_detail,get_anime
 title = r'Kubo-san wa Mob wo Yurusanai'
 data = animeEn(title)
 url = data['data'][0]['url']
@@ -120,4 +122,12 @@ __Result__
   ]
 }
 ```
-
+**3. Download anime**
+```python
+from anime_en import animeEn,get_detail,get_anime
+title = r'Kubo-san wa Mob wo Yurusanai'
+data = animeEn(title)
+url = data['data'][0]['url']
+data_eps = get_detail(url)
+get_anime(data_eps['url_eps'][-1]['1'])
+```

@@ -33,6 +33,7 @@ __install library pip__
 4. tqdm
 5. tabulate
 6. random-user-agent
+7. lxml
 
 __example use code__
 ```python
@@ -40,4 +41,5 @@ __example use code__
 title = 'title anime'
 data = animeEn(title)
 print(data)
+#res {'status': 'success', 'data': [{'title': 'Laid-Back Camp', 'thumb': 'https://animeheaven.me/image.php?nipss', 'url': 'https://animeheaven.me/anime.php?76jna'}, {'title': 'Laid-Back Camp 2nd Season', 'thumb': 'https://animeheaven.me/image.php?0i8hk', 'url': 'https://animeheaven.me/anime.php?0mwyq'}, {'title': 'Laid-Back Camp 3rd Season', 'thumb': 'https://animeheaven.me/image.php?141v8', 'url': 'https://animeheaven.me/anime.php?iguu3'}]}
 ```

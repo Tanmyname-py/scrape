@@ -24,3 +24,20 @@ const { uploadToTop4Top } = require('./top4top');
 })();
 
 ```
+### Scrape anime sub en 
+
+__install library pip__
+1. requests
+2. beautifulsoup4
+3. colorama
+4. tqdm
+5. tabulate
+6. random-user-agent
+
+__example use code__
+```python
+#Search anime
+title = 'title anime'
+data = animeEn(title)
+print(data)
+```

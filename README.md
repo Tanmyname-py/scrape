@@ -57,3 +57,13 @@ __Result__
   ]
 }
 ```
+**2. Get detail anime**
+```python
+title = r'Kubo-san wa Mob wo Yurusanai'
+data = animeEn(title)
+url = data['data'][0]['url']
+data_eps = get_detail(url)
+```
+
+__Result__
+

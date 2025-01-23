@@ -36,12 +36,13 @@ __install library pip__
 7. lxml
 
 __example use code__
+
+**1. Search anime**
 ```python
 #Search anime
 title = 'yuru camp'
 data = animeEn(title)
 print(data)
-#res
 ```
 __Result__
 ```json
@@ -49,19 +50,9 @@ __Result__
   "status": "success",
   "data": [
     {
-      "title": "Laid-Back Camp",
-      "thumb": "https://animeheaven.me/image.php?nipss",
-      "url": "https://animeheaven.me/anime.php?76jna"
-    },
-    {
-      "title": "Laid-Back Camp 2nd Season",
-      "thumb": "https://animeheaven.me/image.php?0i8hk",
-      "url": "https://animeheaven.me/anime.php?0mwyq"
-    },
-    {
-      "title": "Laid-Back Camp 3rd Season",
-      "thumb": "https://animeheaven.me/image.php?141v8",
-      "url": "https://animeheaven.me/anime.php?iguu3"
+      "title": "Kubo Won't Let Me Be Invisible",
+      "thumb": "https://animeheaven.me/image.php?e11oh",
+      "url": "https://animeheaven.me/anime.php?5jhj5"
     }
   ]
 }

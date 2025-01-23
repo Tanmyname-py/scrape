@@ -131,3 +131,9 @@ url = data['data'][0]['url']
 data_eps = get_detail(url)
 get_anime(data_eps['url_eps'][-1]['1'])
 ```
+
+**4 take it easily**
+```python
+from anime_en import AnimeEn_main
+AnimeEn_main()
+```

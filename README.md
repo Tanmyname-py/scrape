@@ -137,3 +137,34 @@ get_anime(data_eps['url_eps'][-1]['1'])
 from anime_en import AnimeEn_main
 AnimeEn_main()
 ```
+#### Scrape Downloader Tiktok with js 
+
+__Install library npm__
+1.axios
+
+ __example use code__
+ ```javascript
+const { tiktok } = require('./tiktok'); // import modul
+
+(async () => {
+    try {
+        const urltt = 'https://vm.tiktok.com/ZS6sCeCG8/';
+        const urls = await tiktok(urltt);
+        console.log(urls);
+    } catch (error) {
+        console.error('Eror : ', error.message);
+    }
+})();
+
+```
+__Result__
+```json
+{
+  title: 'Rin chan😣#漫画が読めるハッシュタグ#ゆるキャン△',
+  cover: 'https://p16-sign-va.tiktokcdn.com/tos-maliva-p-0068/oYbAfBEFohDDRQQiYjabFwsBf6JAdmIEVjE6RJ~tplv-tiktokx-cropcenter:300:400.jpeg?dr=14579&nonce=64125&refresh_token=33c243c4f16b1004a1f5df6fde8884e7&x-expires=1737774000&x-signature=2J06IYtHDeB4YncJpWXnY8cfPdo%3D&idc=maliva&ps=13740610&s=AWEME_DETAIL&shcp=34ff8df6&shp=d05b14bd&t=4d5b0474',
+  origin_cover: 'https://p16-sign-va.tiktokcdn.com/tos-maliva-p-0068/cbd103a6eb8e48ebb737c2bd234ef79b_1718376083~tplv-tiktokx-360p.image?dr=14555&nonce=25034&refresh_token=31181ec09a955f080d64c44cb6f46a66&x-expires=1737774000&x-signature=ScUpV5NzBe6ap08RNJfJ%2B5BZ0HM%3D&ftpl=1&idc=maliva&ps=13740610&s=AWEME_DETAIL&shcp=34ff8df6&shp=d05b14bd&t=4d5b0474',
+  no_watermark: 'https://v16m-default.akamaized.net/2983ad4a6c007d7896b23444cb98bc67/67935b25/video/tos/useast2a/tos-useast2a-pve-0068/oAjsYmRjEU7FAFg5bQJIxQBVZ6CbBfD6EEpfRi/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&er=0&lr=all&net=0&cd=0%7C0%7C0%7C0&cv=1&br=2236&bt=1118&cs=0&ds=6&ft=XE5bCqT0majPD12ZiZXJ3wUOx5EcMeF~O5&mime_type=video_mp4&qs=0&rc=ODY1NGdkZzczOTs0Omg6NUBpams5dHc5cmg4czMzNzczM0AvYzVgYDYwXzQxLTVhMmJgYSNjbzM1MmRrYGpgLS1kMTZzcw%3D%3D&vvpl=1&l=20250124031912C019A816DF07555D15FE&btag=e000b8000',
+  watermark: 'https://v16m-default.akamaized.net/af1c8a8ff600bf4943bed43e0688c675/67935b25/video/tos/maliva/tos-maliva-ve-0068c801-us/okRgQQDfmtBN9ijsB6FEQYD6EbARNlOEIjfbJF/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&er=0&lr=all&net=0&cd=0%7C0%7C0%7C0&cv=1&br=2598&bt=1299&cs=0&ds=3&ft=XE5bCqT0majPD12ZiZXJ3wUOx5EcMeF~O5&mime_type=video_mp4&qs=0&rc=aGc5NmRlZTlkNTlpOTdlZEBpams5dHc5cmg4czMzNzczM0BjYDEuMTMwXzYxMS1hL2MuYSNjbzM1MmRrYGpgLS1kMTZzcw%3D%3D&vvpl=1&l=20250124031912C019A816DF07555D15FE&btag=e000b8000',
+  music: 'https://sf16-ies-music-va.tiktokcdn.com/obj/tos-useast2a-ve-2774/oU5sBiwnIszHsOWyMAZOnoitgLBgdAfL8VBWuR'
+}
+```

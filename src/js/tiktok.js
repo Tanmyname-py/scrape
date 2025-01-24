@@ -1,4 +1,6 @@
+/* Tiktok downloader with js*/
 const axios =  require('axios')
+
 async function tiktok(query) {
   return new Promise(async (resolve, reject) => {
     try {

@@ -1,4 +1,8 @@
-/* Tiktok downloader with js*/
+/* 
+ * Tiktok downloader with js
+ * Github Tanymyname-py
+ * source https://github.com/Tanmyname-py/scrape/edit/main/src/js/tiktok.js
+*/
 const axios =  require('axios')
 
 async function tiktok(query) {

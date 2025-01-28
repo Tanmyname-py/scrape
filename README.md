@@ -178,6 +178,10 @@ __instal library npm__
 **Search from Pinterest**
 Example use code
 ```javascript 
+/* 
+ * Note : Don't forget to add cookies in the function pinSearch 
+*/
+
 const { pinSearch  } = require('./pin'); // import modul
 
 (async () => {

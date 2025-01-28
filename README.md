@@ -283,3 +283,15 @@ __Result__
     }
 ]
 ```
+**Get image,vid,gif from pinterest**
+
+example use code 
+```javascript
+const { pinGet } = require('./pin.js')
+
+(async () => {
+  const pinterestUrl = 'https://id.pinterest.com/pin/13440498882898053/';
+  const videoDetails = await pinGet(pinterestUrl);
+  console.log(videoDetails);
+})();
+```

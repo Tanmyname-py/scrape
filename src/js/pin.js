@@ -36,7 +36,7 @@ async function pinSearch(query) {
       }
     }
 
-    return results.length > 0 ? results : { message: 'Tidak ditemukan hasil untuk kueri yang diberikan.' };
+    return results.length > 0 ? results : { message: 'Eror data not found ' };
   } catch (error) {
     console.error('Error:', error.message);
     return { error: error.message };

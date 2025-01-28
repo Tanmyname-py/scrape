@@ -2,14 +2,15 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
+
+async function pinSearch(query) {
 /**
+ * Function search to web pinterest
  * Scraped By @Tan
  * Protected By MIT LICENSE
  * Source https://github.com/Tanmyname-py
  * You can modify with the condition not to delete this WM
  */
-
-async function pinSearch(query) {
   const url = `https://id.pinterest.com/search/pins/?rs=typed&q=${encodeURIComponent(query)}`;
   try {
     const response = await axios.get(url, {
@@ -43,6 +44,13 @@ async function pinSearch(query) {
 }
 
 async function pinGet(pinterestUrl) {
+/**
+ * Function download vid,gif,image from pinterest 
+ * Scraped By @Tan
+ * Protected By MIT LICENSE
+ * Source https://github.com/Tanmyname-py
+ * You can modify with the condition not to delete this WM
+ */
     try {
         const savePinUrl = `https://www.savepin.app/download.php?url=${encodeURIComponent(pinterestUrl)}&lang=en&type=redirect`;
         const response = await axios.get(savePinUrl, {

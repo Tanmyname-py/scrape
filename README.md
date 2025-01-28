@@ -283,7 +283,7 @@ __Result__
     }
 ]
 ```
-**Get image,vid,gif from pinterest**
+**Get image,video,gif from pinterest**
 
 example use code 
 ```javascript
@@ -294,4 +294,12 @@ const { pinGet } = require('./pin.js')
   const videoDetails = await pinGet(pinterestUrl);
   console.log(videoDetails);
 })();
+```
+__Result__
+```json 
+{
+  "title" : "Anime: Horimiya",
+  "thumbnail": "https://i.pinimg.com/originals/eb/06/ee/eb06ee581f5b98e8a6af24f0bfe1d233.jpg",
+ "videoUrl": "https://stream.kapadiya.net/temp-dl?token=aHR0cHM6Ly92MS5waW5pbWcuY29tL3ZpZGVvcy9tYy83MjBwL2M3LzA0LzM1L2M3MDQzNWU1ZmYwYjQxODQ1MmM0YWJlNWZmZDJhMTFlLm1wNA=="
+}
 ```

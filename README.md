@@ -178,6 +178,8 @@ __instal library npm__
 **Search from Pinterest**
 Example use code
 ```javascript 
+const { pinSearch  } = require('./pin'); // import modul
+
 (async () => {
   const pinterestUrl = 'yui hirasawa'; // My Waifu :V
   const videoDetails = await pinSearch(pinterestUrl);

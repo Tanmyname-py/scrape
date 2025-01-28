@@ -76,3 +76,4 @@ async function pinGet(pinterestUrl) {
     }
 }
 
+module.exports = { pinSearch,pinGet}

@@ -2,7 +2,12 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
-
+/**
+ * Scraped By @Tan
+ * Protected By MIT LICENSE
+ * Source https://github.com/Tanmyname-py
+ * You can modify with the condition not to delete this WM
+ */
 
 async function pinSearch(query) {
   const url = `https://id.pinterest.com/search/pins/?rs=typed&q=${encodeURIComponent(query)}`;

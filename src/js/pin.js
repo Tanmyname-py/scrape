@@ -76,30 +76,3 @@ async function pinGet(pinterestUrl) {
     }
 }
 
-function convertGifToVideo(gifPath, videoPath) {
-  return new Promise((resolve, reject) => {
-    console.log(`Converting file: ${gifPath} to: ${videoPath}`);
-
-    ffmpeg(gifPath)
-      .on('start', commandLine => {
-        console.log('FFmpeg command line: ', commandLine); 
-      })
-      .on('error', (err, stdout, stderr) => {
-        console.error('Error during conversion:', err);
-        console.error('FFmpeg stderr:', stderr); 
-        reject(err);
-      })
-      .on('end', () => {
-        console.log(`Conversion completed: ${gifPath} to ${videoPath}`);
-        resolve(videoPath);
-      })
-      .output(videoPath)
-      .outputOptions([
-        '-movflags faststart', 
-        '-pix_fmt yuv420p',  
-        '-vf', 'scale=trunc(iw/2)*2:trunc(ih/2)*2'
-      ])
-      .run();
-  });
-}
-

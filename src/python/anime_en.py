@@ -23,7 +23,7 @@ white = cl.WHITE
 reset = cl.RESET
 def animeEn(query) :
     '''
-    SEARCH ANIME SUB ID 
+    SEARCH ANIME SUB EN
     '''
     try :
         headers = {

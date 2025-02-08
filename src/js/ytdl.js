@@ -1,7 +1,7 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-async function scrape10Downloader(videoUrl) {
+async function ytdl(videoUrl) {
     const baseUrl = "https://10downloader.com/download?v=";
     const targetUrl = baseUrl + encodeURIComponent(videoUrl);
 

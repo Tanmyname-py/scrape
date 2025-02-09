@@ -4,7 +4,7 @@ const fs = require('fs');
 /**
  * scrape create by @Tan
  * https://github.com/Tanmyname-py
- * Fungsi to url to web top4top.
+ * Fungsi to url from  web top4top.
  * @param {string} filePath.
  * @returns {Promise<string[]>} - Array.
  */

@@ -2,6 +2,10 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 
 async function getTenorGifs(query) {
+/*
+ * SCRAPE BY @TAN
+ * SOURCE https://github.com/Tanmyname-py/scrape/edit/main/src/js/Tenor.js
+*/
     try {
         const searchUrl = `https://tenor.com/id/search/${encodeURIComponent(query)}-gifs`;
         const headers = {

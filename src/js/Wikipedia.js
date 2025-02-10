@@ -2,6 +2,10 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 
 async function searchWikipedia(query) {
+/*
+ * SCRAPE BY @TAN
+ * SOURCE 
+ */
     try {
         const searchUrl = `https://id.m.wikipedia.org/w/index.php?search=${encodeURIComponent(query)}&title=Istimewa:Pencarian&profile=advanced&fulltext=1&ns0=1`;
         const headers = {
@@ -28,3 +32,50 @@ async function searchWikipedia(query) {
     }
 }
 
+async function getWikipediaInfo(url) {
+    try {
+        const { data } = await axios.get(url, {
+            headers: {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            }
+        });
+
+        const $ = cheerio.load(data);
+        const title = $("#firstHeading").text().trim();
+        const tagline = $(".tagline").text().trim();
+
+        let thumbnail = $("table.infobox .infobox-image img").attr("src");
+        if (thumbnail) {
+            thumbnail = "https:" + thumbnail;
+        } else {
+            thumbnail = "Tidak ada thumbnail";
+        }
+        let content = [];
+        $("#mw-content-text .mw-parser-output p").each((index, element) => {
+            const paragraph = $(element).text().trim();
+            if (paragraph.length > 0) {
+                content.push(paragraph);
+            }
+        });
+        let tableOfContents = [];
+        $("#toc ul li").each((index, element) => {
+            const sectionTitle = $(element).text().trim();
+            if (sectionTitle.length > 0) {
+                tableOfContents.push(sectionTitle);
+            }
+        });
+        const sourceUrl = url;
+
+        return {
+            title,
+            tagline,
+            thumbnail,
+            tableOfContents,
+            content: content.join("\n\n"),
+            sourceUrl
+        };
+
+    } catch (error) {
+        return { error: `Gagal mengambil data: ${error.message}` };
+    }
+}

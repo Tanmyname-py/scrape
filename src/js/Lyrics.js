@@ -20,8 +20,6 @@ async function getLyricsLinks(songTitle) {
                 results.push({ title, artist, url });
             }
         });
-
-        // Ambil hasil album
         let albums = [];
         $(".panel:contains('Album results') table tr").each((index, element) => {
             let albumElement = $(element).find("td.text-left.visitedlyr a");

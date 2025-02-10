@@ -20,8 +20,7 @@ async function getLyricsLinks(songTitle) {
             if (linkElement.length > 0) {
                 let title = linkElement.find("span b").text().trim();
                 let url = linkElement.attr("href");
-                let artist = linkElement.html().split("</b> - <b>")[1]?.replace("</b></a>", "").trim() || "Unknown";
-                results.push({ title, artist, url });
+                results.push({ title,url });
             }
         });
         let albums = [];

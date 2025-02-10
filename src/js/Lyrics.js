@@ -2,6 +2,10 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 
 async function getLyricsLinks(songTitle) {
+    /*
+    * SCRAPE BY @TAN
+    * SOURCE https://github.com/Tanmyname-py/scrape/blob/main/src/js/Lyrics.js
+    */
     try {
         const searchUrl = `https://search.azlyrics.com/search.php?q=${encodeURIComponent(songTitle)}+&x=8fa766a1094778835fe58c533cfd3498ed4c90216e9272082a5541d725491280`;
         const headers = {

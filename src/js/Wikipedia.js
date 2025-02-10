@@ -4,7 +4,7 @@ const cheerio = require("cheerio");
 async function searchWikipedia(query) {
 /*
  * SCRAPE BY @TAN
- * SOURCE 
+ * SOURCE https://github.com/Tanmyname-py/scrape/blob/main/src/js/Wikipedia.js
  */
     try {
         const searchUrl = `https://id.m.wikipedia.org/w/index.php?search=${encodeURIComponent(query)}&title=Istimewa:Pencarian&profile=advanced&fulltext=1&ns0=1`;

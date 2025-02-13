@@ -12,8 +12,7 @@ async function ytdl(videoUrl) {
                 'Connection': 'keep-alive',
                 'Content-Type': 'text/html; charset=UTF-8',
                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
-                'Referer': 'https://10downloader.com/',
-                'Cookie': 'XSRF-TOKEN=eyJpdiI6InpKVCtjMXZFM1hSOGFvMktYYVk0VFE9PSIsInZhbHVlIjoiK1JtckRySVQzV1ZRR3pZdFpiVVVwVlczUmUwT1JUWnBMbXJnR0hrU1RBQ25na0l1Tis2YnFOSjhBUE4rTFhFdi9PR3BCcDFrZnI1bzRUT3dVK3NmVlN4eHRNZ2ZIREVmRFpjZEowV1JUQUwwWjRveHhNVG54VjA3clNQZzcrK2siLCJtYWMiOiI2NGUyZTU4MDMxODhlMGE0ZDkzZmViN2U1Y2FkNDI1Y2FlZjljNTY0N2EwOGY3NGJiNzA1N2U4NWJiZTlmYzVhIiwidGFnIjoiIn0%3D; 10downloader_session=eyJpdiI6ImJYOWhYWEo4OVdVcmJSTGt2aHNWOEE9PSIsInZhbHVlIjoiZTNGa0s4cnpyOWNrZG9xU01YTzRpblhkbHMwZWZXRlV1SkNvS0J6a0g2c2tkRWhRK0NUVTRTUEw3RG03cXFJc2o2RWZESnJEY2xKeUhVNFdWZlNQcUhrbEhqSFRBcHg0VnhYa2QrRTUrQzNCQWRlOEx3V3UxY3BrYStKQzh5bVUiLCJtYWMiOiJhZjU2N2E4YzAwNGRmZjk4NjdlMTRjNTU4YTI4MDJjNGZiOTM1ZDgwYTQyMzhhYzI2NGFhNzA1NzA3MTYzNmJhIiwidGFnIjoiIn0%3D'
+                'Referer': 'https://10downloader.com/
             }
         });
 

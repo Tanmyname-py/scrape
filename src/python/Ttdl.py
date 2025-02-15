@@ -1,6 +1,5 @@
 import requests
 import urllib.parse
-import json
 from bs4 import BeautifulSoup as bs
 
 def Ttdl_py(url):

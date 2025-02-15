@@ -7,7 +7,7 @@ def Ttdl_py(url):
    TIKTOK DOWNLOADER WITH PYTHON
    INPUT PARAMETER URL TIKTOK
    Example use code
-   url = "Your ourl url tiktok"
+   url = "url tiktok"
    data = Ttdl_py(url)
    print(data)
    '''

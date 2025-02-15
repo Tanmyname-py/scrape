@@ -1,3 +1,5 @@
+#TIKTOK SCRAPER 
+#source https://gist.github.com/Tanmyname-py/578ba7e6f6a3e3bded61270241b72052
 import requests
 import urllib.parse
 from bs4 import BeautifulSoup as bs

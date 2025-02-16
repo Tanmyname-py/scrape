@@ -50,8 +50,6 @@ def ytSearch(query):
             data_view.append(view)
         data = []
         for play in range(len(data_title)) :
-            if play == len(data_title) :
-                break
             result = {
                 'title' : data_title[play],
                 'thumb' : data_thumb[play],

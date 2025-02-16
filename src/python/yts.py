@@ -2,7 +2,6 @@ import requests
 import urllib.parse
 from bs4 import BeautifulSoup as bs
 import yt_dlp
-import json
 
 #query = 'wali yank'
 
@@ -66,3 +65,16 @@ def ytSearch(query):
             'codeby' : 'Tanmyname-py',
             'data' : data
         }
+
+
+def Ytdlp(url):
+   ydl_opts = {
+        'outtmpl': 'results.%(ext)s',  
+        'format': 'bv+ba/b[ext=mp4]',
+        'noprogress': True,
+        'quiet': True,
+        'merge_output_format': 'mp4',
+    }
+
+   with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+     info = ydl.extract_info(url, download=True)

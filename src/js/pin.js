@@ -108,7 +108,6 @@ async function pinGet(pinterestUrl) {
  * Scraped By @Tan
  * Protected By MIT LICENSE
  * Source https://github.com/Tanmyname-py
- * You can modify with the condition not to delete this WM
  */
     try {
         const savePinUrl = `https://www.savepin.app/download.php?url=${encodeURIComponent(pinterestUrl)}&lang=en&type=redirect`;

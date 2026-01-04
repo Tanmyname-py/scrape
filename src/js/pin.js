@@ -117,13 +117,13 @@ async function pinGet(pinterestUrl) {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
             }
         });
+        fs.writeFileSync("data.html",response.data)
         const $ = cheerio.load(response.data);
         const thumbnail = $('.image-container img').attr('src');
         const title = $('.table-container h1').text().trim();
-        const videoUrl = $('.table-container table tbody tr')
-            .filter((_, el) => $(el).find('.video-quality').text().trim() === '1080p')
-            .find('a.button')
-            .attr('href');
+        let videoUrl = $("#submiturl").attr("href").split("=")[1]
+        videoUrl = decodeURIComponent(videoUrl)
+        
         return {
             title,
             thumbnail,

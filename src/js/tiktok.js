@@ -3,9 +3,9 @@
  * Github Tanymyname-py
  * source https://github.com/Tanmyname-py/scrape/edit/main/src/js/tiktok.js
 */
-const axios =  require('axios')
+import axios from "axios";
 
-async function tiktok(query) {
+function tiktok(query) {
   return new Promise(async (resolve, reject) => {
     try {
       const encodedParams = new URLSearchParams();
@@ -40,6 +40,4 @@ async function tiktok(query) {
   });
 }
 
-module.exports = {
- tiktok,
-}
+export default tiktok

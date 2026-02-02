@@ -119,13 +119,13 @@ async function pinGet(pinterestUrl) {
         const $ = cheerio.load(response.data);
         const thumbnail = $('.image-container img').attr('src');
         const title = $('.table-container h1').text().trim();
-        let videoUrl = $("#submiturl").attr("href").split("=")[1]
-        videoUrl = decodeURIComponent(videoUrl)
+        let dlUrl = $("#submiturl").attr("href").split("=")[1]
+        dlUrl = decodeURIComponent(dlUrl)
         
         return {
             title,
             thumbnail,
-            videoUrl
+            dlUrl
         };
     } catch (error) {
         console.error('Error:', error.message);

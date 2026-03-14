@@ -95,12 +95,6 @@ async function pinterest(query) {
         return [];
     }
 }
-return results.length > 0 ? results : { message: 'Eror data not found ' };
-  } catch (error) {
-    console.error('Error:', error.message);
-    return { error: error.message };
-  }
-}
 
 async function pinGet(pinterestUrl) {
 /**

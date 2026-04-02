@@ -2,7 +2,6 @@ import axios from "axios";
 import {decompress} from "@mongodb-js/zstd";
 import * as cheerio from "cheerio";
 const {load} = cheerio;
-import fs from "fs";
 async function animeSearch(title) {
     const res = await axios({
         url: `https://v1.animasu.app/?s=${title}`,

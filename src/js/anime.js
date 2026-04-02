@@ -1,5 +1,5 @@
 import axios from "axios";
-import { decompress} from "@mongodb-js/zstd";
+import {decompress} from "@mongodb-js/zstd";
 import * as cheerio from "cheerio";
 const {load} = cheerio;
 import fs from "fs";
@@ -32,9 +32,70 @@ async function animeSearch(title) {
         return titles.map((title,i) => {
             return {
                 title,
-                urls : urls[i],
-                thumbs: thumbs[i]
+                url : urls[i],
+                thumb : thumbs[i]
             }
         });
     } 
 }
+
+async function getUrlEps(urlAnime) {
+    const req = await axios({
+        url : urlAnime,
+        headers : {
+            "User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+        }
+    }).catch(err => console.log(err));
+    if(req.status === 200) {
+        const {data} = req;
+        const $ = load(data);
+        const urlEps = [];
+        const titleEps = [];
+        $("#daftarepisode > li").each((_,el) => {
+            urlEps.push($(el).find("a").attr("href"));
+            titleEps.push($(el).find("a").text().match(/\d+/g)[0]);
+        });
+
+        if(urlEps.length > 0) {
+            return titleEps.map((eps,i) => {
+                return {
+                    [eps] : urlEps[i]
+                };
+            });
+        };
+    };
+};
+
+async function getStreamAnime(urlEps) {
+    const req = await axios({
+        url: urlEps,
+        headers : {
+            "User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+        }
+    }).catch(err => console.log(err));
+    if(req.status === 200) {
+        const {data} = req;
+        const $ = load(data);
+        const urlStream = $("iframe").attr("src");
+        const streamOption = [];
+        const defaultQuality =  urlStream.includes("https:") ? urlStream : "https:" + urlStream;
+        $(".mirror > option").each((i,el) => {
+            if(i > 0) { 
+            streamOption.push({
+                [$(el).text().trim()] : Buffer.from($(el).attr("value"),"base64").toString("utf-8")
+            });
+            };
+        });
+
+        return {
+            stream : {
+                defaultQuality,
+                streamOption
+            }
+        };
+    };
+};
+
+
+
+

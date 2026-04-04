@@ -3,7 +3,7 @@ import * as cheerio from "cheerio";
 const { load } = cheerio;
 import { decompress } from "@mongodb-js/zstd";
 
-async function getManga(title) {
+async function SearchManga(title) {
   const req = await axios({
     url: `https://api.komiku.org/?post_type=manga&s=${title}`,
     headers: {
@@ -41,4 +41,79 @@ async function getManga(title) {
       data,
     };
   }
+}
+
+async function getChapter(url) {
+  try {
+  const req = await axios({
+    url,
+    headers : {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+    }
+  })
+  if (req.status === 200) {
+    const $ = load(req.data);
+    const info = [];
+    const chManga = [];
+    $(".inftable > tbody tr").each((_,el) => {
+      //console.log($(el).html())
+     let [key,value] = $(el).find("td").text().split(":");
+    value = key === "Genre" ? value.split("\n").filter(d => d !== "") : value;
+     info.push({[key] : value});
+    });
+    $("#Daftar_Chapter > tbody tr").each((_,el) => {
+      let url = $(el).find("td a").attr("href");
+    
+      let ch = $(el).find("td a span").text();
+      if(ch) {
+        ch = ch.match(/\d+/g);
+        chManga.push({ [ch] : "https://komiku.org" + url })
+      }
+    });  
+    return {
+      status: "ok", 
+      data : {
+      info,
+      chManga
+      }
+    }
+         
+  }
+  } catch (err) {
+    return {
+      status : "error",
+      message : err.message
+    }
+  }
+}
+
+async function getManga(ch) {
+ try {
+   const req = await axios({
+     url : ch,
+     headers : {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+    }
+   });
+   
+   if(req.status === 200) {
+     const $ = load(req.data);
+     const title = $("#Judul h1").text();
+     console.log(title);
+     const images = [];
+      $('#Baca_Komik img.ww').each((i, el) => {
+      images.push({
+       page: $(el).attr('id'),
+       url: $(el).attr('src'),
+       titlePage: $(el).attr('alt'),
+      });
+    });   
+  return  {
+    status : "ok",
+    data : { titleManga: title ,images } 
+  }
+}
+ } catch (err) {
+  return { status : "error", message : err.message }
+ }
 }
